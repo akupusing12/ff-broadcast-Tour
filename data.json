@@ -1,0 +1,15 @@
+{
+    "p1": {
+        "name": "APIZ",
+        "hp": 200,
+        "kill": 0
+    },
+    "p2": {
+        "name": "HAQI",
+        "hp": 200,
+        "kill": 0
+    },
+    "match": {
+        "alive": 50
+    }
+}
