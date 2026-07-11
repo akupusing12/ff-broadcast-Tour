@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: transparent;
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+}
+
+.overlay {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 450px;
+}
+
+.team-panel {
+    background: rgba(10, 10, 10, 0.85);
+    border-left: 5px solid #ff0033;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.3);
+    color: #fff;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px #ff0033);
+}
+
+.team-header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 0, 51, 0.6);
+}
+
+.player {
+    margin-bottom: 15px;
+}
+
+.player .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.player .number {
+    background: #ff0033;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 8px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.player .name {
+    font-size: 18px;
+    font-weight: 600;
+    flex-grow: 1;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.player .kill {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 12px;
+    background: #222;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hp-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0033, #ff4d4d);
+    box-shadow: 0 0 10px #ff0033;
+    transition: width 0.3s ease-out;
+}
+
+.hp-text {
+    text-align: right;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.footer span {
+    color: #fff;
+    margin-left: 5px;
+}
