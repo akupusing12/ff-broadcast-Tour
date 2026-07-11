@@ -1,0 +1,32 @@
+// Konfigurasi URL data (sesuaikan nama repo GitHub Pages lo nanti jika diperlukan)
+const DATA_URL = 'data.json';
+
+function updateOverlay() {
+    // Menambahkan timestamp agar browser tidak memakai cache lama
+    fetch(`${DATA_URL}?t=${new Date().getTime()}`)
+        .then(response => response.json())
+        .then(data => {
+            // Player 1
+            document.getElementById('p1name').innerText = data.p1.name;
+            document.getElementById('p1kill').innerText = data.p1.kill;
+            const p1HpPercent = (data.p1.hp / 200) * 100;
+            document.getElementById('p1hp').style.width = `${Math.max(0, Math.min(100, p1HpPercent))}%`;
+            document.getElementById('p1hptext').innerText = `${data.p1.hp} / 200`;
+
+            // Player 2
+            document.getElementById('p2name').innerText = data.p2.name;
+            document.getElementById('p2kill').innerText = data.p2.kill;
+            const p2HpPercent = (data.p2.hp / 200) * 100;
+            document.getElementById('p2hp').style.width = `${Math.max(0, Math.min(100, p2HpPercent))}%`;
+            document.getElementById('p2hptext').innerText = `${data.p2.hp} / 200`;
+
+            // Global Info
+            document.getElementById('alive').innerText = data.match.alive;
+            document.getElementById('totalkill').innerText = parseInt(data.p1.kill) + parseInt(data.p2.kill);
+        })
+        .catch(err => console.log('Gagal load data: ', err));
+}
+
+// Lakukan polling setiap 1 detik agar tampilan di OBS auto-update secara live
+setInterval(updateOverlay, 1000);
+window.onload = updateOverlay;
